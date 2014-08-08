@@ -130,7 +130,7 @@
     $('.quiz-container .gplus-share').click(function() {
       trackEvent('shared-on-gplus', 'Quiz shared on Google+');
     });
-  }
+
 
   function unpackQuizHack() {
     var newInput = [];
