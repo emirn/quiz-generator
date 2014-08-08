@@ -12,6 +12,8 @@ This is a forked version of Vox's quiz generator. It's not totally done yet but 
 
 This last change is sort of an architectural change to make the tool better suited for general, non-brand specific use. Instead of having the tool generate specific stylesheet and script file references, we can just include the CSS and JS in our application.
 
+[Hosted version of the tool is here](http://robflaherty.github.io/quiz-generator/)
+
 ### Instructions
 1. Wherever you plan on embedding the quizzes, include quiz.js and flowchart.js in your site JS. You'll need jQuery, too.
 2. Wherever you plan on embedding the quizzes, include quiz.css. Add your own styling of course to make it look nice.
