@@ -3,27 +3,24 @@ Quiz Quartet
 
 Quiz Quartet was built to automate the process for generating a quiz so no developer has to be involved and write repetitive code! Check out the project at [http://quiz-generator.herokuapp.com](http://quiz-generator.herokuapp.com)
 
+## Fork!
+This is a forked version of Vox's quiz generator. It's not totally done yet but it works. This version:
+* Removes the hard coded references to the Vox brands' stylesheets and social usernames
+* Removes the Ruby dependencies so you can just run it as static files
+* Removes the quiz/flowchart JS and stylesheets from the generated embed code.
 
-## Running it locally
+This last change is sort of an architectural change to make the tool better suited for general, non-brand specific use. Instead of having the tool generate specific stylesheet and script file references, we can just include the CSS and JS in our application.
 
-This app uses Middleman, so cd to your project directory and just run:
+### Instructions
+1. Wherever you plan on embedding the quizzes, include quiz.js and flowchart.js in your site JS. You'll need jQuery, too.
+2. Wherever you plan on embedding the quizzes, include quiz.css. Add your own styling of course to make it look nice.
+3. I think that's it. Just drop the generated embed code into your CMS.
 
-##### Install Middleman
+All credit goes to the Vox team!
 
-`gem install middleman`
+If you have any questions about the fork you can find me on twitter: [@robflaherty](https://twitter.com/robflaherty).
 
-##### Install gems
-
-`bundle install`
-
-##### Run server
-
-`bundle exec middleman server`
-
-##### Generate static site
-
-`bundle exec middleman build`
-
+/end Fork info
 
 ## How does the tool work?
 
