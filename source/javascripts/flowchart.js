@@ -1,4 +1,4 @@
-(function ($) {
+QuizGenerator_flowchart = function() {
   // make sure to attach json object 'var input' with quiz data, and define 'var pubStylesheet'
   
   // variables
@@ -146,4 +146,5 @@
     slug = cleanSlug(slug);
     buildQuestion(slug);
   });
-})(jQuery);
+
+};

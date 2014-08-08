@@ -1,4 +1,4 @@
-(function ($) {
+QuizGenerator_quiz = function() {
   // make sure to attach json object 'var input' with quiz data
 
   //variables
@@ -160,4 +160,5 @@
     trackEvent('loaded', 'Quiz is loaded');
     unpackQuizHack();
   });
-})(jQuery);
+
+};
