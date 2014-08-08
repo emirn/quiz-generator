@@ -35,13 +35,15 @@
   	return result;
   }
 
-  function addJS() {
+  function showPreview() {
   	quizType = $('input[name="quiz-type"]:checked').val();
-  		if (quizType == 'quiz') {
-  			$('body').append('<script src="source/javascripts/quiz.js" type="text/javascript"><\/script>');
+
+      if (quizType == 'quiz') {
+        QuizGenerator_quiz();
   		} else {
-  			$('body').append('<script src="source/javascripts/flowchart.js" type="text/javascript"><\/script>');
+        QuizGenerator_flowchart();
   		}
+
   }
 
   function changeTemplate() {
@@ -70,7 +72,7 @@
       html += "&lt;script type='text/javascript'>var input = " + JSON.stringify(input) + "; $(function(){ QuizGenerator_" + quizType + "() });; &lt;/script>";
 
     $("#embedcode").html(html);
-    addJS();
+    showPreview();
   }
 
   function buildquiz(){
