@@ -38,9 +38,9 @@
   function addJS() {
   	quizType = $('input[name="quiz-type"]:checked').val();
   		if (quizType == 'quiz') {
-  			$('body').append('<script src="/javascripts/quiz.js" type="text/javascript"><\/script>');
+  			$('body').append('<script src="source/javascripts/quiz.js" type="text/javascript"><\/script>');
   		} else {
-  			$('body').append('<script src="/javascripts/flowchart.js" type="text/javascript"><\/script>');
+  			$('body').append('<script src="source/javascripts/flowchart.js" type="text/javascript"><\/script>');
   		}
   }
 
