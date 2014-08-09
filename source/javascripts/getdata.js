@@ -1,12 +1,17 @@
+// global that the preview references
+var input;
+
 (function ($) {
   var key, quizType;
 
   // initialize tabletop library
-  function init() {
-  		Tabletop.init( { key: url,
-                     callback: readData,
-                     simpleSheet: true } );
-  	}
+  function init(url) {
+    Tabletop.init({
+      key: url,
+      callback: readData,
+      simpleSheet: true
+    });
+  }
 
   function readData(data, tabletop) {
   	input = [];
@@ -36,17 +41,19 @@
   }
 
   function showPreview() {
-  	quizType = $('input[name="quiz-type"]:checked').val();
+    $('.quiz-container').empty();
 
-      if (quizType == 'quiz') {
-        QuizGenerator_quiz();
-  		} else {
-        QuizGenerator_flowchart();
-  		}
+    if (quizType == 'quiz') {
+      QuizGenerator_quiz();
+		} else {
+      QuizGenerator_flowchart();
+		}
 
+    pageScroll('.embed');
   }
 
   function changeTemplate() {
+
   	if (quizType == 'quiz') {
       $('#quiz-template').attr('href', 'https://drive.google.com/previewtemplate?id=0AlMgrVuuAI0MdGl6NngwMGYtX3RHQjlic0xzNnBjUGc&mode=public').addClass('template');
       $('#example-spreadsheet').val('https://docs.google.com/spreadsheet/pub?key=0AlMgrVuuAI0MdGl6NngwMGYtX3RHQjlic0xzNnBjUGc&output=html');
@@ -54,17 +61,6 @@
       $('#quiz-template').attr('href', 'https://drive.google.com/previewtemplate?id=0AlMgrVuuAI0MdE9ZNVhnYmk0TUdidGhiZTgwT0F6MGc&mode=public').addClass('template');
       $('#example-spreadsheet').val('https://docs.google.com/spreadsheet/pub?key=0ArcRX35HpjojdGlSR012UjVDZkpIM19ObVY5TE03U2c&output=html');
     }
-  }
-
-  function submitquiz() {
-  	quizType = $('input[name="quiz-type"]:checked').val();
-  	if (quizType == 'quiz') {
-  		$('.quiz-container').empty();
-  		buildquiz();
-  	} else {
-  		$('.quiz-container').empty();
-  		buildflowchart();
-  	}
   }
 
   function embed(input) {
@@ -76,13 +72,14 @@
   }
 
   function buildquiz(){
-    url = $('#url').val();
-    init();
+    var url = $('#url').val();
+    init(url);
   }
 
-  function buildflowchart() {
-    url = $('#url').val();
-    init();
+  function pageScroll(target) {
+    $('html, body').animate({
+       scrollTop: $(target).offset().top - 30
+    }, 1000);
   }
 
   $(document).ready(function() {
@@ -91,7 +88,7 @@
       $('input:radio[name=quiz-type]:checked').prop('checked', false);
       $('.chart-type span').removeClass('checked');
       $(e.target).closest('span').addClass('checked').find('input').prop('checked', true);
-      
+
       quizType = $('input:radio[name=quiz-type]:checked').val();
       changeTemplate();
     });
@@ -100,8 +97,10 @@
       $('.quiz-help').slideDown();
       return false;
     });
-    
-    
-    $('#build').on('click', submitquiz)
+
+    $('#build').on('click', function() {
+      buildquiz();
+    });
+
   })
 })(jQuery);
