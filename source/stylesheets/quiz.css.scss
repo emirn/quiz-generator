@@ -10,8 +10,8 @@
 // Container for generated quiz
 .quiz-container {
   text-align: center;
-  background-color: #ffffff;
-  margin: 0% auto;
+  background-color: #fff;
+  margin: 0 auto;
   width: 100%;
   max-width: 770px;
   margin-top: 20px;
@@ -31,13 +31,7 @@
 
 // Description for each question
 .qq-description {
-  font-size: 0.6em;
-  font-weight: 300;
-  text-align: left;
-  line-height: 1.5;
-  text-transform: none;
-  font-style: normal;
-  
+  text-align: left;  
 }
 
 // Padding for question text
@@ -98,7 +92,7 @@ ol.answers {
 }
 
 .next:hover {
-  background: transparent;
+  //background: transparent;
 }
 
 // Highlights selected answer

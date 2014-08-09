@@ -69,7 +69,7 @@
 
   function embed(input) {
     var html = "&lt;div class='quiz-container'></div>&lt;script type='text/javascript'>window.jQuery || document.write('&lt;script src=\"//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js\">&lt;&#92;/script>');&lt;/script>";
-      html += "&lt;script type='text/javascript'>var input = " + JSON.stringify(input) + "; $(function(){ QuizGenerator_" + quizType + "() });; &lt;/script>";
+      html += "&lt;script type='text/javascript'>var input = " + JSON.stringify(input) + "; $(function(){ QuizGenerator_" + quizType + "() }); &lt;/script>";
 
     $("#embedcode").html(html);
     showPreview();
@@ -86,11 +86,22 @@
   }
 
   $(document).ready(function() {
-    $('input:radio[name=quiz-type]').click(function() {
+
+    $('.chart-type span').on('click', function(e) {
+      $('input:radio[name=quiz-type]:checked').prop('checked', false);
+      $('.chart-type span').removeClass('checked');
+      $(e.target).closest('span').addClass('checked').find('input').prop('checked', true);
+      
       quizType = $('input:radio[name=quiz-type]:checked').val();
       changeTemplate();
     });
 
+    $('#help').on('click', function() {
+      $('.quiz-help').slideDown();
+      return false;
+    });
+    
+    
     $('#build').on('click', submitquiz)
   })
 })(jQuery);

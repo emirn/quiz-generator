@@ -15,40 +15,61 @@
 
   </head>
 <body>
-<div class="vox-logo"><a href="http://www.voxmedia.com/"><img src="source/images/voxlogo.png" style="width:40px;"></a></div>
+
+<div class="vox-logo">
+  <a href="http://www.voxmedia.com/"><img src="source/images/voxlogo.png" style="width:40px;"></a>
+</div>
 
 <div class="quiz-quartet">
   <h1><img src="source/images/qq.png">Quiz Quartet</h1>
+
+  <div class="notice">
+    <p>This is a fork of Vox's <a href="https://github.com/voxmedia/quiz-generator">quiz generator tool</a>. Information about using this version <a href="https://github.com/robflaherty/quiz-generator">is here</a>.</p>
+  </div>
 </div>
 
 <div class="container">
-  <h4> Write your quiz</h4>
 
-  <p style="text-align: center; font-weight: bold;">This is a fork of Vox's <a href="https://github.com/voxmedia/quiz-generator">quiz generator tool</a>. Information about using this version <a href="https://github.com/robflaherty/quiz-generator">is here</a>.</p>
+<div class="step">
+  <h5>1. Choose a chart type</h5>
 
-  <form>
-    <input type="radio" name="quiz-type" value="quiz"><label>Multiple Choice</label>
-    <input type="radio" name="quiz-type" value="flowchart"><label>Flowchart</label>
-  </form> 
-  <p>Use <a id="quiz-template" target="_new">this Google Spreadsheet template</a> to write your quiz.</p>
-  <p>Once you're done editing, publish the spreadsheet to the web. Under the <b>"File"</b> menu, select <b>"Publish to the Web."</b> Click <b>"Start Publishing"</b> and copy the URL to build the quiz.</p>
-  <center><p style="font-size:0.8em">Want to test it out? Try this spreadsheet:<br><textarea style="overflow:auto;" rows="1" id="example-spreadsheet"></textarea></p></center>
+  <form class="chart-type">
+    <span class="multiple-choice"><input type="radio" name="quiz-type" value="quiz"><label>Multiple Choice</label></span>
+    <span class="flowchart"><input type="radio" name="quiz-type" value="flowchart"><label>Flowchart</label></span>
+  </form>
+</div>
 
-  <h5> Enter your spreadsheet</h5>
-  <p>Copy and paste your spreadsheet's URL here: <input type="text" id="url"></p>
+<div class="step">
+  <h5>2. Enter your spreadsheet</h5>
+  <p><a href="#" id="help">Help?</a></p>
 
-  <div class="embed" style="margin-top: 30px; margin-bottom: 60px;">
-    <h5>Generate, copy and paste this code into Chorus</h5>
-    <center><p><button id="build">Generate your quiz</button><p>
-    <p><textarea type="text" name="embedcode" id="embedcode" style="height: 150px; overflow:auto;"></textarea></center></p>
+  <div class="quiz-help">
+    <p>Use <a id="quiz-template" target="_new" href="">this Google Spreadsheet template</a> to write your quiz.</p>
+    <p>Once you're done editing, publish the spreadsheet to the web. Under the <b>"File"</b> menu, select <b>"Publish to the Web."</b> Click <b>"Start Publishing"</b> and copy the URL to build the quiz.</p>
+    <p>Want to test it out? Try this spreadsheet:</p>
+    <textarea style="overflow:auto;" rows="1" id="example-spreadsheet"></textarea>
   </div>
 
-  <h4>Preview</h4>
+  <p>Copy and paste your spreadsheet's URL here:</p> 
+
+  <input type="text" id="url">
+
+  <button id="build">Generate your quiz</button>
+</div>
+
+<div class="embed step">
+  <h5>3. Paste this code into the CMS</h5>
+  <textarea type="text" name="embedcode" id="embedcode" style="height: 150px; overflow:auto;"></textarea>
+</div>
 
 </div>
 
+<div class="container preview">
+<h5>Preview</h5>
 <div class="quiz-preview">
   <div class="quiz-container"></div>
+</div>
+
 </div>
 
 <script src="source/javascripts/jquery.min.js"></script>

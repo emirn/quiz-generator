@@ -1,9 +1,12 @@
-// Font variables
+@import 'normalize';
+* { box-sizing: border-box; }
+
+// Variables
 $font-stack: 'Open Sans', Helvetica, sans-serif;
 $orange: #f37b21;
 $black: #323132;
-$subheading-size: 0.8em;
 $bold: 800;
+$form-border: #404041;
 
 // Sets background image and fonts
 body {
@@ -20,6 +23,11 @@ body {
   margin: 0px !important;
   margin-right: 0px;
   padding: 0px;
+}
+
+p {
+  padding: 0;
+  margin: 0 0 1em;
 }
 
 // Positioning Vox logo in upper right corner
@@ -42,7 +50,7 @@ body {
   text-align: center;
   z-index: 3 !important;
   margin: 0;
-  padding: 50px 0px 50px 0px;  
+  padding: 20px 0;  
   > img {
     width: 56px;
     margin-bottom: -9px;
@@ -52,24 +60,81 @@ body {
 // Container for quiz generator
 .container {
   position: relative;
-  z-index: 10!important;
-  background-color: #ffffff;
-  margin: 0px;
-  padding: 0px !important;
+  background-color: #fff;
+  margin: 0 auto 30px;
+  padding: 0;
+  max-width: 900px;
+  border-radius: 4px;
+  padding: 20px;
 }
+
+.notice {
+  font-weight: bold;
+  text-align: center;
+  padding: 10px 0 30px;
+  color: #fff;
+
+  p {
+    margin: 0;
+  }
+}
+
+.step {
+  margin: 0 0 40px;
+}
+
+.embed {
+  margin: 0;
+}
+
+.chart-type {
+  width: 100%;
+  overflow: hidden;
+
+  span {
+    width: 49%;
+    padding: 20px;
+    float: left;
+    cursor: pointer;
+    border: 2px solid $form-border;
+    border-radius: 4px;
+    &.flowchart {
+      float: right;
+    }
+    &:hover, &.checked {
+      background: #21DDF3;
+    }
+  }
+
+}
+
+.quiz-help {
+  display: none;
+  background: #eee;
+  padding: 20px;
+  margin: 0 0 20px;
+}
+
+#url {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  margin: 0 0 20px;
+  border: 2px solid $form-border;
+  border-radius: 4px;
+}
+
 
 // Subheadings for quiz generator steps
 h5 {
   font-family: $font-stack;
   font-weight: $bold;
-  font-size: $subheading-size;
+  font-size: 14px;
   color: #000000;
   text-align: left;
   text-transform: uppercase;
   display: block;
-  width: 70%;
   margin: 0% auto;
-  margin-top: 60px;
   margin-bottom: 30px;
   padding: 5px 0% 5px 0%;
   border-bottom: 2px solid $orange;
@@ -80,43 +145,15 @@ h4 {
   font-family: $font-stack;
   font-weight: $bold;
   text-transform: uppercase;
-  font-size: $subheading-size;
+  font-size: 14px;
   color: #ffffff;
   text-align: left;
-  width: 85%;
   display: block;
-  background-color: $orange;
-  padding: 5px 0px 5px 15%;
+  background-color: #404041;
+  padding: 10px;
   border: 0px;
-  &:first-child {
-    margin: 0px 0px 30px 0px;    
-  }
-  &:last-child {
-    margin: 60px 0px 0px 0px;
-  }
 }
 
-// Text under each subheading
-p {
-  color: $black;
-  display: block;
-  width: 70%;
-  margin: 0% auto;
-  margin-bottom: 15px;
-  &:last-child {
-    margin-bottom: 70px;
-  }
-}
-
-// Options for different verticals' stylesheets
-form {
-  color: $black;
-  display: block;
-  width: 70%;
-  margin: 0% auto;
-  margin-bottom: 15px;
-  padding-bottom: 20px;
-}
 
 // Links style
 a {
@@ -132,33 +169,18 @@ a {
   }
 }
 
-// Link to quiz templates
-.template {
-  background-color: #F37B21;
-  color: #FFFFFF;
-}
-
 // 'Generate Your Quiz' button
 button {
-  font-family: Helvetica;
-  font-weight: lighter;
-  font-size: 0.9em;
-  text-decoration: none;
-  text-transform: uppercase;
   color: #fff;
   text-align: center;
-  width: 225px;
+  width: 25%;
   background-color: #f27421;
+  font-size: 16px;
   display: inline-block;
   cursor: pointer;
-  margin: 0% auto;
-  margin-top: 15px;
-  padding: 12px 0px;
-  padding: 8px 20px;
+  padding: 16px;
+  border-radius: 4px;
   border: 0;
-  -o-transition: .2s;
-  -ms-transition: .2s;
-  -moz-transition: .2s;
   -webkit-transition: .2s;
   transition: .2s;
   &:hover {
@@ -173,24 +195,17 @@ label {
 // Preview of generated quiz
 .quiz-preview {
   background-color: transparent;
-  z-index: 6!important;
-  padding: 75px 0px 30px 0px;
+  z-index: 6 !important;
+  padding: 0;
 }
 
 // Embed code textarea
 textarea {
-  color: #ffffff;
-  background-color: #58585b;
-  width: 74%;
+  color: #444;
+  border: 2px solid #666;
+  border-radius: 4px;
+  width: 100%;
   padding: 10px;
-  border: 0px;
+  font-size: 14px;
 }
 
-// Input for public spreadsheet URL to generate quiz
-#url {
-  color: #ffffff;
-  background-color: #58585b;
-  width: 200px;
-  padding: 2px;
-  border: 0px;
-}
