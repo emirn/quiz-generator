@@ -412,7 +412,7 @@ p {
   padding: 10px 0 30px;
   color: #fff; }
   .notice p {
-    margin: 0; }
+    margin: 0 0 1em; }
 
 .step {
   margin: 0 0 40px; }
@@ -517,4 +517,5 @@ textarea {
   padding: 10px;
   font-size: 14px; }
 
-/*# sourceMappingURL=quiz-generator.css.map */
+#instructions {
+  display: none; }

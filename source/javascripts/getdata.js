@@ -93,6 +93,11 @@ var input;
       changeTemplate();
     });
 
+    $('#show-instructions').on('click', function() {
+      $('#instructions').slideDown();
+      return false;
+    });
+
     $('#help').on('click', function() {
       $('.quiz-help').slideDown();
       return false;
