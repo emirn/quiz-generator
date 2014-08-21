@@ -19,12 +19,13 @@ QuizGenerator_flowchart = function() {
 
   // get next slug to build question, disable previous question's buttons
   var getSlug = function(newslug, selection) {
-    $(selection).addClass('flowchart-selected');
+    $selection = $(selection);
+    $selection.addClass('flowchart-selected');
     trackEvent(
-        'q' + questionNumber + '-selected-' + this.class,
-        'Q' + questionNumber + ' selected ' + this.class);
-    var parent = ($(selection).parent());
-    var moveArrow = $(selection).position().left + 55;
+        'q' + questionNumber + '-selected-' + $selection.data('question-choice'),
+        'Q' + questionNumber + ' selected ' + $selection.data('question-choice'));
+    var parent = ($selection.parent());
+    var moveArrow = $selection.position().left + 55;
     $(parent).after('<div style="position:absolute; left:' + moveArrow + 'px;" class="arrow-down">&darr;</div>');
     $('.flowchart-button').attr('disabled', true);
     slug = newslug;
@@ -75,7 +76,7 @@ QuizGenerator_flowchart = function() {
       lastQuestion();
     } else {
       for (var i = 0; i < connectsLabels.length; i ++) {
-        $('.question-' + questionNumber).append("<button class='flowchart-button qq-button choice-" + questionNumber + "-" + i + "'>" + connectsLabels[i] + "</button>");
+        $('.question-' + questionNumber).append("<button class='flowchart-button qq-button choice-" + questionNumber + "-" + i + "' data-question-choice='choice-" + questionNumber + "-" + i + "'>" + connectsLabels[i] + "</button>");
         $('.choice-' + questionNumber + '-' + i).on('click', getClass);
       }
       $('.question-' + questionNumber).fadeIn(400);
