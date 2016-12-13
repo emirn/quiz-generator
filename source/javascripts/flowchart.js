@@ -26,7 +26,7 @@ QuizGenerator_flowchart = function() {
         'Q' + questionNumber + ' selected ' + $selection.data('question-choice'));
     var parent = ($selection.parent());
     var moveArrow = $selection.position().left + 55;
-    $(parent).after('<div style="position:absolute; left:' + moveArrow + 'px;" class="arrow-down">&darr;</div>');
+    $(parent).after('<div style="left:' + moveArrow + 'px;" class="arrow-down">&darr;</div>');
     $('.flowchart-button').attr('disabled', true);
     slug = newslug;
     buildQuestion(slug);
@@ -49,21 +49,39 @@ QuizGenerator_flowchart = function() {
   };
 
   // build question in flowchart - scrolldown enabled for all questions except the last one
-  var buildQuestion = function(slug) {
+   var buildQuestion = function(slug) {
     compareSlug(slug);
+     if (input[currentRow].image != ""){
     if (currentRow === 0) {
-      $(".quiz-container").append("<div class='question-" + questionNumber + "'><div class='question'>" + input[currentRow].text + "</div></div>");
+      $(".quiz-container").append("<div class='question-" + questionNumber + "'><div class='question'>" + "<img src='" + input[currentRow].image +"'><br />"  + input[currentRow].text + "</div></div>");
     } else {
       if ($(window).width() > 500) {
-        $(".quiz-container").append("<div class='question-" + questionNumber + "' style='display:none;'><div class='question'>" + input[currentRow].text + "</div></div>");
+        $(".quiz-container").append("<div class='question-" + questionNumber + "' style='display:none;'><div class='question'>" + "<img src='" + input[currentRow].image +"'><br />"  + input[currentRow].text + "</div></div>");
         $(".question-" + (questionNumber)).fadeIn('slow');
       } else {
-        $(".quiz-container").append("<div class='question-" + questionNumber + "'><div class='question'>" + input[currentRow].text + "</div></div>");
+        $(".quiz-container").append("<div class='question-" + questionNumber + "'><div class='question'>" + "<img src='" + input[currentRow].image +"'><br />"  + input[currentRow].text + "</div></div>");
         pageScroll(".question-" + (questionNumber));
       }
     }
     writeOptions(currentRow);
     trackEvent('q' + questionNumber + '-displayed', 'Q' + questionNumber + ' displayed');
+  } else {
+       if (currentRow === 0) {
+       $(".quiz-container").append("<div class='question-" + questionNumber + "'><div class='question'>" + input[currentRow].text + "</div></div>");
+
+  } else {
+       if ($(window).width() > 500) {
+         $(".quiz-container").append("<div class='question-" + questionNumber + "' style='display:none;'><div class='question'>" + input[currentRow].text + "</div></div>");
+         $(".question-" + (questionNumber)).fadeIn('slow');
+       } else {
+         $(".quiz-container").append("<div class='question-" + questionNumber + "'><div class='question'>" + input[currentRow].text + "</div></div>");
+         pageScroll(".question-" + (questionNumber));
+       }
+     }
+     writeOptions(currentRow);
+     trackEvent('q' + questionNumber + '-displayed', 'Q' + questionNumber + ' displayed');
+
+     }
   };
 
   // write possible options to each question, handles multiple options
@@ -128,7 +146,7 @@ QuizGenerator_flowchart = function() {
   var link = document.URL;
   var shareQuiz = function() {
 
-    $(".quiz-container").append("<div class='scorecard'><div id='social-media'><ul><li><a href='http://www.facebook.com/sharer.php?u=" + link + "' target='_blank'>" + facebook + "</a></li><li><a href='http://twitter.com/home?status=Check out this flowchart' target='_blank'>" + twitter + "</a></li><li><a href='https://plus.google.com/share?url=" + link + "' target='_blank'>" + google + "</a></li></ul></div></div>");
+    $(".quiz-container").append("<div class='scorecard'></div>");
 
     $('.quiz-container .fb-share').click(function() {
       trackEvent('shared-on-fb', 'Quiz shared on Facebook');

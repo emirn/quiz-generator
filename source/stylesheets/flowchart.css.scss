@@ -47,8 +47,9 @@ button.flowchart-button {
 }
 
 p.down-arrow {
-  margin: 0 auto;
+  margin: 20px;
   width: 100%;
+  padding: 200px;
 }
 
 .question {
@@ -78,6 +79,11 @@ p.down-arrow {
     margin-bottom: 0px;
     line-height: 1.5em;
   }
+}
+
+img {
+  width: 50px;
+  border: 5px solid pink;
 }
 
 #social-media {
