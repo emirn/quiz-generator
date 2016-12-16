@@ -12,7 +12,7 @@
 .qq-question {
   font-size: 1.17em;
   max-width: 80%;
-  margin: 0% auto;
+  margin: 0 auto;
   margin-top: 20px !important;
   line-height: 1.2; }
 
@@ -40,11 +40,11 @@ ol.answers {
   cursor: pointer;
   counter-reset: li-counter;
   position: relative;
-  margin: 0px auto;
+  margin: 0 auto;
   width: 80%;
   max-width: 500px;
   margin-bottom: 50px;
-  padding: 0px; }
+  padding: 0; }
   ol.answers > li {
     -o-transition: 0.2s;
     -ms-transition: 0.2s;
@@ -77,6 +77,7 @@ ol.answers {
   cursor: pointer;
   width: 160px;
   margin: 2px 5px;
+  background-color: #d30910;
   padding: .7em .7em .6em;
   border: 0; }
 
