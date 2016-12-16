@@ -58,8 +58,8 @@ var input;
       $('#quiz-template').attr('href', 'https://drive.google.com/previewtemplate?id=0AlMgrVuuAI0MdGl6NngwMGYtX3RHQjlic0xzNnBjUGc&mode=public').addClass('template');
       $('#example-spreadsheet').val('https://docs.google.com/spreadsheet/pub?key=0AlMgrVuuAI0MdGl6NngwMGYtX3RHQjlic0xzNnBjUGc&output=html');
     } else {
-      $('#quiz-template').attr('href', 'https://drive.google.com/previewtemplate?id=0AlMgrVuuAI0MdE9ZNVhnYmk0TUdidGhiZTgwT0F6MGc&mode=public').addClass('template');
-      $('#example-spreadsheet').val('https://docs.google.com/spreadsheet/pub?key=0ArcRX35HpjojdGlSR012UjVDZkpIM19ObVY5TE03U2c&output=html');
+      $('#quiz-template').attr('href', 'https://drive.google.com/previewtemplate?id=1R7vu67rDY81woSEgTe32zMVYAEYbLz7YILknOuuxydQ&mode=public').addClass('template');
+      $('#example-spreadsheet').val('https://docs.google.com/spreadsheets/d/1R7vu67rDY81woSEgTe32zMVYAEYbLz7YILknOuuxydQ/pubhtml');
     }
   }
 
