@@ -7,8 +7,8 @@
   transition: $transition-time;
 }
 
-$font-stack: 'Alight Sans', sans-serif;
-$question-font: 'Balto', sans-serif;
+$font-stack: 'LFT Etica', sans-serif;
+$question-font: 'LFT Etica', sans-serif;
 
 .quiz-container {
   font-family: $font-stack;
@@ -26,13 +26,15 @@ $question-font: 'Balto', sans-serif;
 
 div.buttons {
   display:inline;
+  font-family: $font-stack;
 }
 
 button.flowchart-button {
   @include transition(0.2s);
   font-size: .9em;
-  font-weight: bolder;
+  font-weight: 200;
   color: #fff;
+  font-family: $font-stack;
   background-color: #d30910;
   cursor: pointer; 
   width: 120px;

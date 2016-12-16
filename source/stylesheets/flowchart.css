@@ -1,5 +1,5 @@
 .quiz-container {
-  font-family: "Alight Sans", sans-serif;
+  font-family: "LFT Etica", sans-serif;
   text-align: center;
   background-color: #FFFFFF;
   margin: 0 auto;
@@ -11,7 +11,8 @@
   text-align: center; }
 
 div.buttons {
-  display: inline; }
+  display: inline;
+  font-family: "LFT Etica", sans-serif; }
 
 button.flowchart-button {
   -o-transition: 0.2s;
@@ -20,8 +21,9 @@ button.flowchart-button {
   -webkit-transition: 0.2s;
   transition: 0.2s;
   font-size: .9em;
-  font-weight: bolder;
+  font-weight: 200;
   color: #fff;
+  font-family: "LFT Etica", sans-serif;
   background-color: #d30910;
   cursor: pointer;
   width: 120px;
@@ -42,7 +44,7 @@ p.down-arrow {
   margin-bottom: 0.4em;
   padding: 0 0.6em 0.6em; }
   .question p {
-    font-family: "Balto", sans-serif;
+    font-family: "LFT Etica", sans-serif;
     font-size: 1.2em;
     font-weight: 800; }
 
